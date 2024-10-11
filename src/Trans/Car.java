@@ -3,13 +3,13 @@ package Trans;
 import Trans.Rideable;
 import Trans.Transport;
 
-public class Car extends Transport implements Rideable {
+public abstract  class Car extends Transport implements Rideable {
     String brand;
     int horsePower;
     boolean isAwd;
     float acceleration;
 
-    Car() {
+    public Car() {
         this("Land rover", 150, true, 10);
 
     }
@@ -23,9 +23,8 @@ public class Car extends Transport implements Rideable {
 
     }
 
-    void start() {
-        System.out.println(brand + " has been started");
-    }
+    abstract void start();
+
 
     void setAcceleration(float acceleration) {
         this.acceleration = acceleration;
